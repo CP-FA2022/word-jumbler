@@ -82,4 +82,4 @@ The app will function as a letter-jumble game where a user will have a certain a
 ## Wireframes
 
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://codepath.slack.com/files/U042AKU4B8E/F046XBM5LHY/img_5107.jpg?origin_team=T0J064FCJ&origin_channel=D046CLN1UJ2" width=600>
+<img src="https://codepath.slack.com/files/U042AKU4B8E/F046XBM5LHY/img_5107.jpg" width=600>

@@ -83,3 +83,7 @@ The app will function as a letter-jumble game where a user will have a certain a
 
 [Add picture of your hand sketched wireframes in this section]
 ![](https://github.com/CP-FA2022/app/blob/main/IMG_5107.jpg)
+
+## Milestones
+Milestone 1
+![](https://github.com/CP-FA2022/app/blob/main/Kapture%202022-10-24%20at%2023.47.36.gif)

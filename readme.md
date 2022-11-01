@@ -1,4 +1,4 @@
-# Milestone 1 - Word Jumbler
+# Word Jumbler
 
 ## Table of Contents
 
@@ -88,3 +88,16 @@ The app will function as a letter-jumble game where a user will have a certain a
 ### Milestone 1
 App theme created for unifrom colors and font throughout the app
 ![](https://github.com/CP-FA2022/app/blob/main/Kapture%202022-10-24%20at%2023.47.36.gif)
+
+### Milestone 2
+Created 5 new activity files: home page, game page, login page, registration page, and load save game page
+Connected game page and loadsave game page to home page through intents
+#### User Stories
+- [ ] User opens the app and is directed to the login/registration
+  - [x] User is directed to the main home page activity
+    - [x] User can open a new game
+      - [ ] User can play a full game
+    - [x] User can open the load saved game page
+      - [ ] User can open a saved game
+
+![](https://github.com/CP-FA2022/app/blob/main/Milestone2.gif)

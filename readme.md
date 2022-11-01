@@ -87,6 +87,7 @@ The app will function as a letter-jumble game where a user will have a certain a
 ## Milestones
 ### Milestone 1
 App theme created for unifrom colors and font throughout the app
+
 ![](https://github.com/CP-FA2022/app/blob/main/Milestone1.gif)
 
 ### Milestone 2

@@ -87,7 +87,7 @@ The app will function as a letter-jumble game where a user will have a certain a
 ## Milestones
 ### Milestone 1
 App theme created for unifrom colors and font throughout the app
-![](https://github.com/CP-FA2022/app/blob/main/Kapture%202022-10-24%20at%2023.47.36.gif)
+![](https://github.com/CP-FA2022/app/blob/main/Milestone1.gif)
 
 ### Milestone 2
 Created 5 new activity files: home page, game page, login page, registration page, and load save game page

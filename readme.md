@@ -1,4 +1,4 @@
-# Milestone 1 - Word Jumbler
+# Word Jumbler
 
 ## Table of Contents
 

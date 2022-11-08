@@ -15,7 +15,7 @@ The app will function as a letter-jumble game where a user will have a certain a
 ### App Evaluation
 
 - **Category:** Gaming
-- **Mobile:** The mobile app will be utilizng push noitifications and real-time data 
+- **Mobile:** The mobile app will be utilizing push notifications and real-time data 
 - **Story:** Many people enjoy puzzle apps or brainteasers in some form, even casual puzzle enjoyers could use the app
 - **Market:** Many people enjoy puzzle apps or brainteasers in some form, even casual puzzle enjoyers could use the app
 - **Habit:** The user could be opening the app just out of slight boredom or just as a daily brainteaser but if the user enjoys the game it wouldnt be hard to get them to return.
@@ -30,7 +30,7 @@ The app will function as a letter-jumble game where a user will have a certain a
 * A user must be able to play a complete game.
 * The user's score will be added to a live global leaderboard
 * The user will be able to track their progress
-* The user can earn achievments for daily use
+* The user can earn achievements for daily use
 
 **Stretch Features**
 
@@ -86,13 +86,13 @@ The app will function as a letter-jumble game where a user will have a certain a
 
 ## Milestones
 ### Milestone 1
-App theme created for unifrom colors and font throughout the app
+App theme created for uniform colors and font throughout the app
 
 ![](https://github.com/CP-FA2022/app/blob/main/Milestone1.gif)
 
 ### Milestone 2
 Created 5 new activity files: home page, game page, login page, registration page, and load save game page
-Connected game page and loadsave game page to home page through intents
+Connected game page and load/save game page to home page through intents
 #### User Stories
 - [ ] User opens the app and is directed to the login/registration
   - [x] User is directed to the main home page activity

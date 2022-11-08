@@ -4,4 +4,6 @@
     <string name="button">Button</string>
     <string name="secondary_color">Secondary color</string>
     <string name="email_icon">email icon</string>
+    <string name="new_game">new game?</string>
+    <string name="game_over">game over!</string>
 </resources>

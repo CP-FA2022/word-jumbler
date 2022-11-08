@@ -1,4 +1,4 @@
-package com.example.unit_06
+package com.example.jumbler
 
 import org.junit.Test
 

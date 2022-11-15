@@ -117,3 +117,17 @@ Using wordle solution data, GameActivity now has a list of valid words that can 
     
 ![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone3.gif)
 
+### Milestone 4
+
+Created + integrated Firebase project into app. User data will be logged and stored in Firestore to display user history and leaderboards. Firebase Authentication implemented to prevent unauthenticated access to Firestore data.
+
+Implemented Flexbox Layout to programtically hold TextViews for the user to select letters for their guesses.
+
+- [x] User opens the app and is directed to the login/registration
+  - [x] User is directed to the main home page activity
+    - [x] User can select between fragment pages
+      - [x] User can open a new game from the launch game fragment
+        - [x] User gets a random selection of letters to create words based on difficulty level
+      - [ ] User can load a saved game
+      - [ ] User can view the leaderboard
+

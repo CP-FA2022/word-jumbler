@@ -6,4 +6,13 @@
     <string name="email_icon">email icon</string>
     <string name="new_game">new game?</string>
     <string name="game_over">game over!</string>
+    <string name="password_must_be_than_6_characters"><![CDATA[Password must be > than 6 characters]]></string>
+    <string name="login">Login</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="enter_a_valid_email_address">Enter a valid email address</string>
+    <string name="jumblr">JUMBLR</string>
+    <string name="password">Password</string>
+    <string name="google_logo">Google Logo</string>
 </resources>

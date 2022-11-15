@@ -1,26 +1,45 @@
 package com.example.jumbler.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.jumbler.R
 import com.example.jumbler.fragments.LaunchGameFragment
 import com.example.jumbler.fragments.LeadboardFragment
-import com.example.jumbler.fragments.LoadGameFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
     private val bottomNavigationView: BottomNavigationView by lazy { findViewById(R.id.btmNavView) }
     private val launchGameFragment: Fragment = LaunchGameFragment()
-    private val loadGameFragment: Fragment = LoadGameFragment()
     private val leaderboardFragment: Fragment = LeadboardFragment()
-
+    private val tvHelloPlayer: TextView by lazy { findViewById(R.id.tvHelloPlayer) }
+    private val btnLogout: Button by lazy { findViewById(R.id.btnLogout) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val user = Firebase.auth.currentUser
+        user?.let {
+            val name = user.displayName
+            val email = user.email
+            val uid = user.uid
+            tvHelloPlayer.text = "Hello, ${email}!"
+        }
+
+        btnLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, AuthenticationActivity::class.java)
+            startActivity(intent)
+        }
 
         val fragmentManager: FragmentManager = supportFragmentManager
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -28,7 +47,6 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.itemLaunchGame -> fragment = launchGameFragment
                 R.id.itemLeaderboard-> fragment = leaderboardFragment
-                R.id.itemLoadGame-> fragment = loadGameFragment
             }
             fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment).commit()
             true

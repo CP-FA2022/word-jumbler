@@ -8,14 +8,6 @@
         android:icon="@drawable/ic_baseline_rocket_launch_24"
         android:title="LAUNCH"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/itemLoadGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_dataset_24"
-        android:title="LOAD"
-        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/itemLeaderboard"

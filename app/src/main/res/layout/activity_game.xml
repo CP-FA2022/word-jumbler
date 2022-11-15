@@ -3,10 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/view_margin">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexLetterBank"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexWrap="wrap"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGuess2">
+
+    </com.google.android.flexbox.FlexboxLayout>
 
     <TextView
-        android:id="@+id/tvIdx17"
+        android:id="@+id/tvGuess4"
         android:layout_width="50dp"
         android:layout_height="75dp"
         android:background="@color/primaryDarkColor"
@@ -15,14 +30,14 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx16"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx16"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGuess5"
+        app:layout_constraintEnd_toStartOf="@+id/tvGuess5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx12"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx16" />
+        app:layout_constraintStart_toEndOf="@+id/tvGuess3"
+        app:layout_constraintTop_toTopOf="@+id/tvGuess5" />
 
     <TextView
-        android:id="@+id/tvIdx15"
+        android:id="@+id/tvGuess0"
         android:layout_width="50dp"
         android:layout_height="75dp"
         android:background="@color/primaryDarkColor"
@@ -31,15 +46,15 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx14"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx14"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGuess1"
+        app:layout_constraintEnd_toStartOf="@+id/tvGuess1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx14"
+        app:layout_constraintTop_toTopOf="@+id/tvGuess1"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tvIdx14"
+        android:id="@+id/tvGuess1"
         android:layout_width="50dp"
         android:layout_height="75dp"
         android:background="@color/primaryDarkColor"
@@ -48,17 +63,17 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx13"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx13"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGuess2"
+        app:layout_constraintEnd_toStartOf="@+id/tvGuess2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx15"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx13" />
+        app:layout_constraintStart_toEndOf="@+id/tvGuess0"
+        app:layout_constraintTop_toTopOf="@+id/tvGuess2" />
 
     <TextView
-        android:id="@+id/tvIdx16"
+        android:id="@+id/tvGuess5"
         android:layout_width="50dp"
         android:layout_height="75dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:background="@color/primaryDarkColor"
         android:gravity="center"
         android:text="X"
@@ -67,11 +82,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx17"
+        app:layout_constraintStart_toEndOf="@+id/tvGuess4"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
     <TextView
-        android:id="@+id/tvIdx12"
+        android:id="@+id/tvGuess3"
         android:layout_width="50dp"
         android:layout_height="75dp"
         android:background="@color/primaryDarkColor"
@@ -80,14 +95,14 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx17"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx17"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGuess4"
+        app:layout_constraintEnd_toStartOf="@+id/tvGuess4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx13"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx17" />
+        app:layout_constraintStart_toEndOf="@+id/tvGuess2"
+        app:layout_constraintTop_toTopOf="@+id/tvGuess4" />
 
     <TextView
-        android:id="@+id/tvIdx13"
+        android:id="@+id/tvGuess2"
         android:layout_width="50dp"
         android:layout_height="75dp"
         android:background="@color/primaryDarkColor"
@@ -96,209 +111,11 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx12"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx12"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGuess3"
+        app:layout_constraintEnd_toStartOf="@+id/tvGuess3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx14"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx12" />
-
-    <TextView
-        android:id="@+id/tvIdx6"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="B"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx11"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx7"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx11" />
-
-    <TextView
-        android:id="@+id/tvIdx7"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="M"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx6"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx8"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx6" />
-
-    <TextView
-        android:id="@+id/tvIdx9"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="E"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx10"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx11"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx10" />
-
-    <TextView
-        android:id="@+id/tvIdx10"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="J"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx9"
-        app:layout_constraintTop_toBottomOf="@+id/tvIdx5"
-        app:layout_constraintVertical_bias="0.456" />
-
-    <TextView
-        android:id="@+id/tvIdx11"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="L"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx9"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx6"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx9" />
-
-    <TextView
-        android:id="@+id/tvIdx8"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="U"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx7"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx7" />
-
-    <TextView
-        android:id="@+id/tvIdx5"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="96dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="E"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx4"
-        app:layout_constraintTop_toBottomOf="@+id/tvIdx16" />
-
-    <TextView
-        android:id="@+id/tvIdx3"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="M"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx4"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx2"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvIdx2"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="B"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx3"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx1"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvIdx1"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="L"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx2"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx0"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvIdx0"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="E"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx1"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvIdx4"
-        android:layout_width="50dp"
-        android:layout_height="75dp"
-        android:background="@color/secondaryColor"
-        android:gravity="center"
-        android:text="U"
-        android:textColor="@color/secondaryTextColor"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvIdx5"
-        app:layout_constraintEnd_toStartOf="@+id/tvIdx5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvIdx3"
-        app:layout_constraintTop_toTopOf="@+id/tvIdx5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/tvGuess1"
+        app:layout_constraintTop_toTopOf="@+id/tvGuess3" />
 
     <TextView
         android:id="@+id/tvTitle2"

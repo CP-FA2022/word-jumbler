@@ -131,5 +131,5 @@ Implemented Flexbox Layout to programtically hold TextViews for the user to sele
       - [ ] User can load a saved game
       - [ ] User can view the leaderboard
      
-![](hhttps://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone4.gif)
+![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone3.gif)
 

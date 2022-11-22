@@ -81,16 +81,28 @@
         android:text="Difficulty"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSetDifficulty"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLastPlayed2" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekDifficulty"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/tvSetDifficulty"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

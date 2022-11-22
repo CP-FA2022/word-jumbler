@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item
+        type="id"
+        name="tv0" />
+    <item
+        type="id"
+        name="tv1" />
+    <item
+        type="id"
+        name="tv2" />
+    <item
+        type="id"
+        name="tv3" />
+    <item
+        type="id"
+        name="tv4" />
+    <item
+        type="id"
+        name="tv5" />
+    <item
+        type="id"
+        name="tv6" />
+    <item
+        type="id"
+        name="tv7" />
+    <item
+        type="id"
+        name="tv8" />
+    <item
+        type="id"
+        name="tv9" />
+    <item
+        type="id"
+        name="tv10" />
+    <item
+        type="id"
+        name="tv11" />
+</resources>

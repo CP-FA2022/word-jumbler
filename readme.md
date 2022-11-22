@@ -131,3 +131,19 @@ Implemented Flexbox Layout to programtically hold TextViews for the user to sele
       - [ ] User can load a saved game
       - [ ] User can view the leaderboard
 
+### Milestone 5
+
+Implemented game functionality where a player can initialize a game with varying difficulty levels. Difficulty level determines amount of letters to jumble. The user the has until the timer completes to create as many 4-6 letter words as possible and will be scored based on letter length
+Connected data flow between GameActivity and GameOverActivity
+Added navigation between GameOverActivity, HomeActivity, and GameActivity
+
+- [x] User opens the app and is directed to the login/registration
+  - [x] User is directed to the main home page activity
+    - [x] User can select between fragment pages
+      - [x] User can open a new game from the launch game fragment
+        - [x] User gets a random selection of letters to create words based on difficulty level
+        - [x] User can open a new game
+        - [x] User can play a full game
+      - [ ] User can view the leaderboard
+
+![]()

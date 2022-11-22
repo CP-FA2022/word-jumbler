@@ -128,8 +128,10 @@ Implemented Flexbox Layout to programtically hold TextViews for the user to sele
     - [x] User can select between fragment pages
       - [x] User can open a new game from the launch game fragment
         - [x] User gets a random selection of letters to create words based on difficulty level
-      - [ ] User can load a saved game
+        - [ ] User can play a game
       - [ ] User can view the leaderboard
+     
+![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone4.gif)
 
 ### Milestone 5
 

@@ -148,4 +148,4 @@ Added navigation between GameOverActivity, HomeActivity, and GameActivity
         - [x] User can play a full game
       - [ ] User can view the leaderboard
 
-![]()
+![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone5.gif)

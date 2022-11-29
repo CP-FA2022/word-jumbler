@@ -149,3 +149,22 @@ Added navigation between GameOverActivity, HomeActivity, and GameActivity
       - [ ] User can view the leaderboard
 
 ![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone5.gif)
+
+### Milestone 6
+
+Automatically saves user game result at end of game, uploads to personal user history and to global leaderboard
+Leaderboard fragment displaying top 10 global scores
+User can choose their own display name to appear on the leaderboard and game
+
+- [x] User opens the app and is directed to the login/registration
+  - [x] User is directed to the main home page activity
+    - [x] User van view their highest score and time last played
+    - [x] User can select between fragment pages
+      - [x] User can open a new game from the launch game fragment
+        - [x] User gets a random selection of letters to create words based on difficulty level
+        - [x] User can open a new game
+        - [x] User can play a full game
+      - [x] User can view the leaderboard
+  
+![](https://github.com/CP-FA2022/word-jumbler/blob/main/milestones/Milestone6.gif)
+

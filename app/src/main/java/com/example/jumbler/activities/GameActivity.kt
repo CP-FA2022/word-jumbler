@@ -14,17 +14,24 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
+import androidx.lifecycle.ViewModelProvider
 import com.example.jumbler.R
 import com.example.jumbler.adapters.SolutionsAdapter
+import com.example.jumbler.models.FirestoreViewModel
+import com.example.jumbler.models.GameHistoryRecord
+import com.example.jumbler.models.LeaderboardRecord
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayout
 import com.google.android.flexbox.JustifyContent
+import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import kotlin.math.roundToInt
 
 class GameActivity : AppCompatActivity() {
 
     private var words: ArrayList<String> = arrayListOf()
-    private var seconds = 10
+    private var seconds = 5
 
     private var vowels: ArrayList<String> = arrayListOf("A", "E", "I", "O", "U")
     private var constanants: ArrayList<String> = arrayListOf("B", "C", "D", "F", "G", "H", "J",
@@ -36,23 +43,35 @@ class GameActivity : AppCompatActivity() {
 
     private lateinit var solutionsAdapter: SolutionsAdapter
 
+    private lateinit var firestoreViewModel: FirestoreViewModel
+    var user = FirebaseAuth.getInstance().currentUser
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        var difficulty = intent.getIntExtra("difficulty", 1)
+        firestoreViewModel = ViewModelProvider(this)[FirestoreViewModel::class.java]
+
+        val difficulty = intent.getIntExtra("difficulty", 1)
 
         val progressTimer: ProgressBar = findViewById(R.id.progressTimer)
-        progressTimer.max = seconds * 1000
-        val timer = object : CountDownTimer((seconds * 1000).toLong(), 1000) {
+        val totalTime = seconds * 1000.toLong()
+        var timeMultiplier = 1.00
+        progressTimer.max = totalTime.toInt()
+        val timer = object : CountDownTimer(totalTime, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 progressTimer.progress = ((seconds * 1000) - millisUntilFinished).toInt()
+                timeMultiplier = (1 + (millisUntilFinished / totalTime)).toDouble()
             }
 
             override fun onFinish() {
                 val intent = Intent(this@GameActivity, GameOverActivity::class.java)
                 intent.putExtra("solutions", solutions)
                 intent.putExtra("score", score)
+                val leaderboardRecord = LeaderboardRecord(score, Timestamp.now(), user!!.displayName.toString())
+                firestoreViewModel.saveLeaderboardToFirebase(leaderboardRecord)
+                val gameHistoryRecord = GameHistoryRecord(score, Timestamp.now())
+                firestoreViewModel.saveGameHistoryToFirebase(gameHistoryRecord)
                 startActivity(intent)
                 finish()
             }
@@ -96,11 +115,11 @@ class GameActivity : AppCompatActivity() {
         }
 
         when(difficulty) {
-            1 -> nLetters = 12
-            2 -> nLetters = 11
-            3 -> nLetters = 10
-            4 -> nLetters = 9
-            5 -> nLetters = 8
+            1 -> nLetters = 14
+            2 -> nLetters = 13
+            3 -> nLetters = 12
+            4 -> nLetters = 11
+            5 -> nLetters = 10
         }
         var nVowels: Int = nLetters!! - 7
 
@@ -173,7 +192,7 @@ class GameActivity : AppCompatActivity() {
             Log.v("guess", guessWord)
             if (words.contains(guessWord.lowercase()) && (!solutions.contains(guessWord))) {
                 val nGuess = guessWord.length
-                score += 30 + (nGuess * 5)
+                score += 30 + (nGuess * 5) + (50 * difficulty) + (50 * timeMultiplier).roundToInt()
                 tvScore.text = "Score: ${score}"
                 resetGuess()
                 resetTile()

@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.jumbler.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class AuthenticationActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class AuthenticationActivity : AppCompatActivity() {
     private val editRegisterEmail: EditText by lazy { findViewById(R.id.editRegisterEmail) }
     private val editRegisterPassword: EditText by lazy { findViewById(R.id.editRegisterPassword) }
     private val editRegisterConfirm: EditText by lazy { findViewById(R.id.editRegisterConfirm) }
+    private val editDisplayName: EditText by lazy { findViewById(R.id.editDisplayName) }
     private val btnRegister: Button by lazy { findViewById(R.id.btnRegister) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +48,7 @@ class AuthenticationActivity : AppCompatActivity() {
         }
     }
 
-    fun createAccount(email: String, password: String) {
+    private fun createAccount(email: String, password: String, name: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -54,6 +56,16 @@ class AuthenticationActivity : AppCompatActivity() {
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
                     val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("name", name)
+
+                    val profileUpdates = userProfileChangeRequest {
+                        displayName = name
+                    }
+                    user!!.updateProfile(profileUpdates).addOnCompleteListener {
+                        if (task.isSuccessful) {
+                            Log.d(TAG, "User profile updated.")
+                        }
+                    }
                     startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
@@ -64,7 +76,7 @@ class AuthenticationActivity : AppCompatActivity() {
             }
     }
 
-    fun signIn(email: String, password: String) {
+    private fun signIn(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -82,7 +94,7 @@ class AuthenticationActivity : AppCompatActivity() {
             }
     }
 
-    fun loginHandler() {
+    private fun loginHandler() {
         val email = editLoginEmail.text
         val password = editLoginPassword.text
 
@@ -97,21 +109,25 @@ class AuthenticationActivity : AppCompatActivity() {
         }
     }
 
-    fun registerHandler() {
+    private fun registerHandler() {
         val email = editRegisterEmail.text
         val password = editRegisterPassword.text
         val confirm = editRegisterConfirm.text
+        val displayName = editDisplayName.text
 
         if ((password.length < 6) || (confirm.length < 6)) {
             Toast.makeText(this, "Your password has an invalid # of characters!", Toast.LENGTH_LONG).show()
-        } else if (!(email.contains("@"))) {
+        } else if (displayName.length < 2) {
+            Toast.makeText(this, "Your display name must be greater than 2 characters!", Toast.LENGTH_LONG).show()
+        }
+        else if (!(email.contains("@"))) {
             Toast.makeText(this, "Your email is invalid!", Toast.LENGTH_LONG).show()
         } else if ((email.isNullOrEmpty()) || (password.isNullOrBlank())) {
             Toast.makeText(this, "One or more fields are empty!", Toast.LENGTH_LONG).show()
         }  else if (password.toString() != confirm.toString()) {
             Toast.makeText(this ,"Make sure your password fields are matching!", Toast.LENGTH_SHORT).show()
-        } else {
-            createAccount(email.toString(), password.toString())
+        } else if (displayName.length > 2 && password.length >= 6) {
+            createAccount(email.toString().trim(), password.toString(), displayName.toString())
         }
     }
 

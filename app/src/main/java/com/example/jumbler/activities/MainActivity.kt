@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.jumbler.R
 import com.example.jumbler.fragments.LaunchGameFragment
-import com.example.jumbler.fragments.LeadboardFragment
+import com.example.jumbler.fragments.LeaderboardFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private val bottomNavigationView: BottomNavigationView by lazy { findViewById(R.id.btmNavView) }
     private val launchGameFragment: Fragment = LaunchGameFragment()
-    private val leaderboardFragment: Fragment = LeadboardFragment()
+    private val leaderboardFragment: Fragment = LeaderboardFragment()
     private val tvHelloPlayer: TextView by lazy { findViewById(R.id.tvHelloPlayer) }
     private val btnLogout: Button by lazy { findViewById(R.id.btnLogout) }
 
@@ -32,7 +32,12 @@ class MainActivity : AppCompatActivity() {
             val name = user.displayName
             val email = user.email
             val uid = user.uid
-            tvHelloPlayer.text = "Hello, ${email}!"
+
+            if (intent.hasExtra("name")) {
+                tvHelloPlayer.text = "Hello, ${intent.getStringExtra("name")}!"
+            } else {
+                tvHelloPlayer.text = "Hello, ${name}!"
+            }
         }
 
         btnLogout.setOnClickListener {
